@@ -1,0 +1,10 @@
+*.log
+.DS_Store
+node_modules
+dist
+
+## CONFIGURED BY ZAZEN ###############################################
+.eslintrc.js
+prettier.config.js
+tsconfig.json
+########################################### END CONFIGURED BY ZAZEN ##
