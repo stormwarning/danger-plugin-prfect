@@ -33,6 +33,7 @@ export default {
 		],
 		rules: {
 			...config.rules,
+			'yoda': 'off',
 			'@typescript-eslint/no-require-imports': 'off',
 			'@typescript-eslint/no-unsafe-return': 'off',
 			'import/no-anonymous-default-export': [
