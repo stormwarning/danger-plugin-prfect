@@ -19,17 +19,33 @@ export function checkTitle() {
 	/** @todo Ignore "tag" prefixes. */
 	let isImperative = Boolean(nlp(title).verbs().isImperative().text())
 
-	if (!isImperative) fail('PR titles should use the imperative mood.')
-	if (50 <= title.length && title.length <= 72) {
-		warn('Great PR titles are 50 characters or fewer.')
+	if (!isImperative) {
+		fail('PR titles should use the imperative mood.')
 		markdown(`
-💡 **Tip:** If you’re having a hard time summarizing, you might be committing too
-many changes at once.
+*Imperative mood* just means “spoken or written as if giving a command
+or instruction”.
+
+💡 **Tip:** A properly formed Git commit subject line should always be
+able to complete the following sentence:
+
+> If applied, this commit will…
 		`)
 	}
 
-	if (72 < title.length)
+	if (50 <= title.length && title.length <= 72) {
+		warn('Great PR titles are 50 characters or fewer.')
+	}
+
+	if (72 < title.length) {
 		fail(
 			'PR titles must be less than 72 characters to avoid being truncated.'
 		)
+	}
+
+	if (50 <= title.length) {
+		markdown(`
+💡 **Tip:** If you’re having a hard time summarizing, you might be
+committing too many changes at once.
+		`)
+	}
 }
