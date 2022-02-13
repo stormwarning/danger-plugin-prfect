@@ -1,25 +1,29 @@
 {
   "name": "danger-plugin-prfect",
-  "version": "0.0.0-development",
-  "description": "PRs",
+  "version": "0.0.1",
+  "description": "Enforce guidelines for high-quality pull requests.",
   "keywords": [
     "danger",
-    "danger-plugin"
+    "danger-plugin",
+    "pr",
+    "pull request"
   ],
   "homepage": "https://github.com/stormwarning/danger-plugin-prfect",
   "repository": "stormwarning/danger-plugin-prfect",
   "license": "ISC",
-  "author": "Jeff",
+  "author": "Jeff Nelson (https://tidaltheory.io)",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "scripts": {
     "build": "npm run setup && esbuild src/index.ts --bundle --platform=node --target=node16 --outfile=dist/index.js",
+    "changeset": "changeset add",
     "predocs": "rm -rf docs/",
     "docs": "esdoc -c .esdoc.json",
     "format": "prettier --write",
     "lint": "eslint --fix",
     "prepare": "husky install",
     "prepublish": "npm run build",
+    "release": "npm run build && changeset publish",
     "setup": "zazen configure",
     "test": "ava"
   },
@@ -39,6 +43,8 @@
     "danger": "*"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "0.4.2",
+    "@changesets/cli": "2.20.0",
     "@zazen/cli": "0.3.1",
     "ava": "4.0.1",
     "esbuild": "0.14.21",

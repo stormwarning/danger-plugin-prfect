@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      # https://github.com/actions/checkout
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      # https://github.com/actions/setup-node
+      - name: Setup Node.js 16.x
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version: 16.x
+
+      # https://github.com/bahmutov/npm-install
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      # https://github.com/changesets/action
+      - name: Create release PR or publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build
+          # for your packages and calls changeset publish
+          publish: npm run release
+          title: 'Chore: Publish release'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
