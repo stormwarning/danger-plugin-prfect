@@ -26,7 +26,7 @@
     "prepublish": "npm run build",
     "release": "npm run build && changeset publish",
     "setup": "zazen configure",
-    "test": "ava"
+    "test": "ava src/__tests__"
   },
   "lint-staged": {
     "*.@(js|ts|tsx)": "eslint --fix"
