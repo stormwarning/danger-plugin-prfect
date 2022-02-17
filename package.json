@@ -13,9 +13,10 @@
   "license": "ISC",
   "author": "Jeff Nelson (https://tidaltheory.io)",
   "main": "dist/index.js",
-  "types": "types/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "npm run setup && esbuild src/index.ts --bundle --platform=node --target=node16 --outfile=dist/index.js",
+    "postbuild": "tsc --declaration --emitDeclarationOnly",
     "changeset": "changeset add",
     "predocs": "rm -rf docs/",
     "docs": "esdoc -c .esdoc.json",
@@ -25,7 +26,7 @@
     "prepublish": "npm run build",
     "release": "npm run build && changeset publish",
     "setup": "zazen configure",
-    "test": "ava"
+    "test": "ava src/__tests__"
   },
   "lint-staged": {
     "*.@(js|ts|tsx)": "eslint --fix"
@@ -45,7 +46,7 @@
   "devDependencies": {
     "@changesets/changelog-github": "0.4.2",
     "@changesets/cli": "2.20.0",
-    "@zazen/cli": "0.3.1",
+    "@zazen/cli": "0.3.2",
     "ava": "4.0.1",
     "esbuild": "0.14.21",
     "esbuild-register": "3.3.2",

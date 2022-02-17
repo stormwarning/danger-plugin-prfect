@@ -3,10 +3,10 @@ import { DangerDSLType } from 'danger/distribution/dsl/DangerDSL.js'
 import nlp from 'compromise'
 
 declare const danger: DangerDSLType
-export declare function message(message: string): void
-export declare function warn(message: string): void
-export declare function fail(message: string): void
-export declare function markdown(message: string): void
+// Declare function message(message: string): void
+declare function warn(message: string): void
+declare function fail(message: string): void
+declare function markdown(message: string): void
 
 /**
  * Validate PR titles
