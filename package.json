@@ -1,6 +1,6 @@
 {
   "name": "danger-plugin-prfect",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Enforce guidelines for high-quality pull requests.",
   "keywords": [
     "danger",
