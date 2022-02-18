@@ -17,5 +17,10 @@ import { checkTitle } from 'danger-plugin-prfect'
 checkTitle()
 ```
 
+### checkTitle
+
+Checks for subject length, ~~capitalisation,~~ ~~trailing punctuation,~~ and
+imperative mood.
+
 [npm-url]: https://www.npmjs.com/package/danger-plugin-prfect
 [npm-img]: https://img.shields.io/npm/v/danger-plugin-prfect.svg?style=flat-square
