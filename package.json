@@ -15,8 +15,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "npm run setup && esbuild src/index.ts --bundle --platform=node --target=node16 --outfile=dist/index.js",
-    "postbuild": "tsc --declaration --emitDeclarationOnly",
+    "build": "npm run setup && esbuild src/index.ts --bundle --platform=node --target=node12 --outfile=dist/index.js",
+    "postbuild": "tsc --project tsconfig.dts.json",
     "changeset": "changeset add",
     "predocs": "rm -rf docs/",
     "docs": "esdoc -c .esdoc.json",
