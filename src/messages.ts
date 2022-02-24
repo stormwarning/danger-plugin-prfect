@@ -12,6 +12,5 @@ export const LENGTH_WARNING = 'Great PR titles are 50 characters or fewer.'
 export const LENGTH_ERROR =
 	'PR titles must be less than 72 characters to avoid being truncated.'
 export const LENGTH_TIP = `
-💡 **Tip:** If you’re having a hard time summarizing, you might be
-committing too many changes at once.
+💡 **Tip:** If you’re having a hard time summarizing, you might be committing too many changes at once.
 `
