@@ -1,10 +1,11 @@
 # danger-plugin-prfect
 
-## 0.1.1
+### 0.1.1 — 2022-02-24
 
-### Patch Changes
+#### 🐛 Fixed
 
-- [`03a9ad9`](https://github.com/stormwarning/danger-plugin-prfect/commit/03a9ad9595cf1175d6ff561d15ac31c583d57b06) Thanks [@stormwarning](https://github.com/stormwarning)! - Fix type declaration output
+- Fix type declaration output [`03a9ad9`](https://github.com/stormwarning/danger-plugin-prfect/commit/03a9ad9595cf1175d6ff561d15ac31c583d57b06)
+- Remove hard line break in `LENGTH_TIP` [`2ef35a`](https://github.com/stormwarning/danger-plugin-prfect/commit/2ef35a3fd2e88d9b947ec6927636400426ea63a2)
 
 ## 0.1.0 — 2022-02-18
 
